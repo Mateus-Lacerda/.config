@@ -2,9 +2,23 @@
 
 !.gitignore
 !i3/
+!i3/**
+
 !dunst/
+!dunst/**
+
 !i3blocks/
+!i3blocks/**
+
 !kitty/
+!kitty/**
+
 !picom/
+!picom/**
+
 !rofi/
+!rofi/**
+
 !tmux/
+!tmux/**
+tmux/plugins
