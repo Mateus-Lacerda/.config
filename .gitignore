@@ -1,3 +1,10 @@
 *
 
 !.gitignore
+!i3/*
+!dunst/*
+!i3blocks/*
+!kitty/*
+!picom/*
+!rofi/*
+!tmux/*
