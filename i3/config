@@ -211,7 +211,7 @@ exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/linux_user_ro
 exec --no-startup-id picom -b
 exec --no-startup-id dunst
 exec --no-startup-id bash -c "sleep 3 && $HOME/.config/dunst/screen_layout.sh"
-exec --no-startup-id bash -c "sleep 5 && $HOME/.config/i3/start_workspace_4.sh"
+exec --no-startup-id bash -c "sleep 5 && $HOME/.config/i3/start_workspace_10.sh"
 exec --no-startup-id xset r rate 300 50
 
 gaps inner 5

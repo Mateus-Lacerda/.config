@@ -1,37 +1,26 @@
 // vim:ts=4:sw=4:et
 {
-    // splitv split container with 1 children
     "border": "pixel",
+    "current_border_width": 1,
     "floating": "auto_off",
-    "layout": "splitv",
+    "geometry": {
+       "height": 1035,
+       "width": 1898,
+       "x": 0,
+       "y": 0
+    },
     "marks": [],
+    "name": "btop",
     "percent": 0.5,
-    "type": "con",
-    "nodes": [
-        {
-            "border": "pixel",
-            "current_border_width": 1,
-            "floating": "auto_off",
-            "geometry": {
-               "height": 1037,
-               "width": 1898,
-               "x": 0,
-               "y": 0
-            },
-            "marks": [],
-            "name": "btop",
-            "percent": 1,
-            "swallows": [
-               {
-                "class": "^kitty$",
-                "instance": "^kitty$",
-                "machine": "^archlinux$",
-                "title": "^btop$"
-               }
-            ],
-            "type": "con"
-        }
-    ]
+    "swallows": [
+       {
+        "class": "^kitty$",
+        "instance": "^kitty$",
+        "machine": "^archlinux$",
+        "title": "^btop$"
+       }
+    ],
+    "type": "con"
 }
 
 {
@@ -48,7 +37,7 @@
             "current_border_width": 1,
             "floating": "auto_off",
             "geometry": {
-               "height": 1037,
+               "height": 1035,
                "width": 1898,
                "x": 0,
                "y": 0
@@ -71,7 +60,7 @@
             "current_border_width": 1,
             "floating": "auto_off",
             "geometry": {
-               "height": 1037,
+               "height": 1035,
                "width": 1898,
                "x": 0,
                "y": 0
