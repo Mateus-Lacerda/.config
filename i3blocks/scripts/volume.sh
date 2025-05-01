@@ -7,15 +7,15 @@ get_volume_status() {
 
   # Check if pactl commands succeeded
   if [[ -z "$muted" || -z "$volume" ]]; then
-    echo "<span foreground='#cc241d'></span><span background='#cc241d' foreground='#000000'>Error</span><span foreground='#282828' background='#cc241d'></span>"
+    echo " Error "
     exit 1
   fi
 
   # Display volume or muted status with styles
   if [[ "$muted" == "yes" ]]; then
-    echo "<span foreground='#98971a'></span><span background='#98971a' foreground='#000000'> Muted </span><span foreground='#282828' background='#98971a'></span>"
+    echo "  Muted "
   else
-    echo "<span foreground='#458588'></span><span background='#458588' foreground='#000000'> $volume </span><span foreground='#282828' background='#458588'></span>"
+    echo "  $volume "
   fi
 }
 

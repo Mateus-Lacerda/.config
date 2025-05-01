@@ -1,9 +1,5 @@
-[separator]
-command=echo ""
-interval=once
-
 [hostkernel]
-command=echo "<span foreground='#5e81ac'></span><span background='#5e81ac' foreground='#000000'>  $(cat /etc/hostname)  $(uname -r) </span><span foreground='#282828' background='#5e81ac'></span>"
+command=echo "<big><big>  </big></big>"
 interval=once
 markup=pango
 
@@ -12,19 +8,9 @@ command=~/.config/i3blocks/scripts/bitcoin.sh
 interval=10
 markup=pango
 
-[cpu]
-command=~/.config/i3blocks/scripts/cpu.sh
-interval=2
-markup=pango
-
 [disk]
 command=~/.config/i3blocks/scripts/disk.sh
 interval=60
-markup=pango
-
-[wifi]
-command=~/.config/i3blocks/scripts/wifi.sh
-interval=5
 markup=pango
 
 [volume]
@@ -43,3 +29,7 @@ command=~/.config/i3blocks/scripts/time.sh
 interval=60
 markup=pango
 
+[wifi]
+command=~/.config/i3blocks/scripts/wifi.sh
+interval=5
+markup=pango

@@ -11,7 +11,7 @@ raw_dom=$(curl -s 'https://api.coingecko.com/api/v3/global' \
 if [[ -z "$raw_price" || "$raw_price" == "null" ]]; then
   price_disp="-"
 else
-  price_disp="$raw_price"
+  price_disp="$raw_price USD"
 fi
 
 # 3) Dominância
@@ -31,5 +31,5 @@ else
 fi
 
 # 5) Saída Pango com estilo
-echo "<span foreground='#f7931a'></span><span background='#f7931a' foreground='#000000'>  ${price_disp} USD |  ${dom_disp} | 24h: ${change_disp} </span><span foreground='#282828' background='#f7931a'></span>"
+echo " <big><big></big></big> ${price_disp} <big><big></big></big> ${dom_disp} <big><big>󱑸</big></big> ${change_disp} "
 
