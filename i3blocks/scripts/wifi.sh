@@ -7,15 +7,15 @@ get_wifi_status() {
     quality=$(nmcli -f IN-USE,SIGNAL dev wifi | grep '*' | awk '{print $2}')
 
     if [[ -n "$interface" && -n "$essid" ]]; then
-      echo " 󱚻 ${quality}% "
+      echo " <big><big>󱚻</big></big> ${quality}% "
     else
-      echo " 󱚻 down "
+      echo " <big><big>󱚼</big></big> down "
     fi
 }
 
 handle_click() {
   case "$1" in
-    1) nm-connection-editor;;
+    1) nm-connection-editor &;;
   esac
 }
 

@@ -13,9 +13,9 @@ get_volume_status() {
 
   # Display volume or muted status with styles
   if [[ "$muted" == "yes" ]]; then
-    echo "  Muted "
+    echo " <big><big></big></big> Muted "
   else
-    echo "  $volume "
+    echo " <big><big></big></big> $volume "
   fi
 }
 

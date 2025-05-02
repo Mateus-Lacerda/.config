@@ -31,5 +31,5 @@ else
 fi
 
 # 5) Saída Pango com estilo
-echo " <big><big></big></big> ${price_disp} <big><big></big></big> ${dom_disp} <big><big>󱑸</big></big> ${change_disp} "
+echo " <big><big></big></big> ${price_disp}  <big><big></big></big> ${dom_disp}  <big><big>󱑸</big></big> ${change_disp} "
 

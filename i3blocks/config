@@ -33,3 +33,8 @@ markup=pango
 command=~/.config/i3blocks/scripts/wifi.sh
 interval=5
 markup=pango
+
+[bluetooth]
+command=~/.config/i3blocks/scripts/bluetooth.sh
+interval=5
+markup=pango
