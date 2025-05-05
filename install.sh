@@ -61,9 +61,12 @@ sudo sed -i 's/GRUB_THEME=.*/GRUB_THEME="/boot/grub/themes/tokyo-night/theme.txt
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Get my dotfiles
-git clone git@github.com:Mateus-Lacerda/.config.git ~/.config
+git clone git@github.com:Mateus-Lacerda/.config.git ./configs
 # Get my neovim config
-git clone git@github.com:Mateus-Lacerda/neovim_config ~/.config/nvim
+git clone git@github.com:Mateus-Lacerda/neovim_config ./configs/.config/nvim
+
+sudo cp -r ./configs/.config ~/
+
 
 
 echo "Press Enter to reboot"; read
