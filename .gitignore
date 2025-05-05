@@ -23,4 +23,7 @@
 !tmux/**
 tmux/plugins
 
+!scripts/
+!scripts/**
+
 !install.sh
