@@ -22,7 +22,8 @@ get_volume_status() {
 # Handle click events
 handle_click() {
   case "$1" in
-    1) pactl set-sink-mute @DEFAULT_SINK@ toggle ;; # Left click: toggle mute
+    1) pavucontrol & ;; # Left click: open pavucontrol
+    3) pactl set-sink-mute @DEFAULT_SINK@ toggle && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga ;; # Middle click: toggle mute
     4) pactl set-sink-volume @DEFAULT_SINK@ +5% && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga ;; # Scroll up: increase volume
     5) pactl set-sink-volume @DEFAULT_SINK@ -5% && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga ;; # Scroll down: decrease volume
   esac

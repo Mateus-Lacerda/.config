@@ -22,3 +22,5 @@
 !tmux/
 !tmux/**
 tmux/plugins
+
+!install.sh
