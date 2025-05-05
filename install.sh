@@ -11,7 +11,7 @@ rm -rf yay
 
 # Base stuff
 sudo pacman -S --noconfirm git man mupdf neofetch wget curl \
-    pavucontrol bluez blueman arandr
+    pavucontrol bluez blueman arandr kitty
 
 # Cool fonts
 yay -S --noconfirm nerd-fonts-sf-mono
