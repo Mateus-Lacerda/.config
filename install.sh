@@ -64,3 +64,10 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 git clone git@github.com:Mateus-Lacerda/.config.git ~/.config
 # Get my neovim config
 git clone git@github.com:Mateus-Lacerda/neovim_config ~/.config/nvim
+
+
+echo "Press Enter to reboot"; read
+
+# Reboot
+sudo reboot
+
