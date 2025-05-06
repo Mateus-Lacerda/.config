@@ -1,0 +1,71 @@
+configuration{
+    // modi: ["drun", "window", "run"];
+    icon-theme: "Papirus-Dark";
+    show-icons: true;
+    terminal: "kitty";
+    location: 0;
+    sidebar-mode: false;
+    display-drun: " ";
+    display-run: " ";
+    display-window: " ";
+
+    //adding vim keybindings
+    kb-row-up: "Up,k";
+    kb-row-left: "Left,h";
+    kb-row-right: "Right,l";
+    kb-row-down: "Down,j";
+
+    kb-accept-entry: "Control+z,Control+y,Return,KP_Enter";
+
+    //fixing up
+    kb-remove-to-eol: "";
+    kb-move-char-back: "Control+b";
+    kb-remove-char-back: "BackSpace";
+    kb-move-char-forward: "Control+f";
+    kb-mode-complete: "Control+o";
+}
+
+@theme "/usr/share/rofi/themes/tokyonight.rasi"
+
+window {
+    width: 700;
+    /*since line wont work with height, i comment it out 
+    if you rather control the size via height
+    just comment it out */
+    //height: 500;
+
+    orientation: horizontal;
+    location: center;
+    anchor: center;
+    transparency: "screenshot";
+    border-color: @transparent;   
+    border: 0px;
+    border-radius: 15px;
+    spacing: 0;
+    children: [ mainbox ];
+}
+
+listview {
+    layout: vertical;
+    //spacing: 5px;
+    padding: 8px;
+    lines: 1;
+    columns: 5;
+    border: 0px; 
+    border-radius: 50px;
+    border-color: @primary;
+    dynamic: true;
+}
+
+inputbar {
+    enabled: false;
+}
+
+element {
+    padding: 12px;
+    vertical-align: 1;
+    border-radius: 25px;
+    color: @kl;
+    font: inherit;
+}
+

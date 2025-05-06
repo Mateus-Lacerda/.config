@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+OPTIONS=(
+  ""
+  ""
+  ""
+  ""
+  ""      # ícone alternativo para “sair do i3”
+)
+
+CHOSEN=$(printf "%s\n" "${OPTIONS[@]}" \
+         | rofi -dmenu -i -theme powermenu.rasi -p "")
+
+case "$CHOSEN" in
+  "")  systemctl poweroff   ;;
+  "")  systemctl reboot     ;;
+  "")  $HOME/.config/scripts/lock & systemctl suspend    ;;
+  "")  $HOME/.config/scripts/lock    ;;
+  "")  i3-msg exit          ;;
+esac

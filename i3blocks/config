@@ -38,3 +38,7 @@ markup=pango
 command=~/.config/i3blocks/scripts/bluetooth.sh
 interval=5
 markup=pango
+
+[powermenu]
+command=~/.config/i3blocks/scripts/power.sh
+interval=once
