@@ -27,3 +27,55 @@ configuration{
     kb-mode-complete: "Control+o";
 }
 @theme "/usr/share/rofi/themes/tokyonight.rasi"
+
+window {
+    width: 800;
+    orientation: horizontal;
+    location: center;
+    anchor: center;
+    transparency: "screenshot";
+    border-color: @transparent;   
+    border: 0px;
+    border-radius: 6px;
+    spacing: 0;
+    children: [ mainbox ];
+}
+
+mainbox {
+    orientation: horizontal; /* Dividir em duas colunas */
+    spacing: 0;
+    children: [ imagebox, listbox ];
+}
+
+imagebox {
+    background-color: @transparent; /* Transparente para mostrar o papel de parede */
+    background-image: url("~/.config/wallpapers/vaporwave_cropped.jpg", height);
+    padding: 10px;
+    width: 150px; /* Largura da área transparente à esquerda */
+}
+
+listbox {
+    background-color: @bg; /* Fundo opaco para a lista */
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+}
+
+inputbar {
+    color: @kl;
+    padding: 11px;
+    border: 0px 0px 1px 0px;
+    border-color: @black;
+    border-radius: 6px 6px 0px 0px;
+}
+
+listview {
+    layout: vertical;
+    //spacing: 5px;
+    padding: 8px;
+    lines: 12;
+    columns: 1;
+    border: 0px;
+    border-radius: 0px 0px 6px 6px;
+    dynamic: false;
+}
+

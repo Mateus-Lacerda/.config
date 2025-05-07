@@ -68,4 +68,9 @@ element {
     color: @kl;
     font: inherit;
 }
-
+element-text, element-icon {
+    background-color: inherit;
+    text-color: inherit;
+    // TODO: make this centered another way
+    horizontal-align: 0.37;
+}
