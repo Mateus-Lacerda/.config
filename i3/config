@@ -36,7 +36,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -98,7 +98,7 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: "
-set $ws2 "2: "
+set $ws2 "2: 󰖟"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -215,12 +215,12 @@ default_floating_border pixel 1
 
 # Custom mode to start the browser with different profiles
 mode "browser" {
-        bindsym p exec firefox -P Pessoal; mode "default"
-        bindsym b exec firefox -P Balanças\ SMART; mode "default"
-        bindsym g exec firefox -P GPT; mode "default"
-        bindsym u exec firefox -P Mateus\ -\ UFG; mode "default"
-        bindsym w exec firefox -P Work\ -\ Pacto; mode "default"
-        bindsym Shift+w exec firefox -P Mateus\ -\ Trabalho; mode "default"
+        bindsym p exec zen -P Pessoal; mode "default"
+        bindsym b exec zen -P Balanças\ SMART; mode "default"
+        bindsym g exec zen -P GPT; mode "default"
+        bindsym u exec zen -P Mateus\ -\ UFG; mode "default"
+        bindsym w exec zen -P Work\ -\ Pacto; mode "default"
+        bindsym Shift+w exec zen -P Mateus\ -\ Trabalho; mode "default"
         bindsym $mod+b mode "default"
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -243,12 +243,16 @@ bindsym $mod+Shift+x exec ~/.config/scripts/lock
 # Power menu
 bindsym $mod+Shift+e exec --no-startup-id ~/.config/scripts/power
 
+# Brightness control
+bindsym $mod+Shift+b exec --no-startup-id ~/.config/scripts/brightness
+
 # Autostart
 exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/mountain.png
 exec --no-startup-id picom -b
 exec --no-startup-id dunst
 exec --no-startup-id bash -c "sleep 2 && $HOME/.config/dunst/screen_layout.sh"
 exec --no-startup-id bash -c "sleep 5 && $HOME/.config/i3/start_workspace_10.sh"
+exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme theme_name
 exec_always --no-startup-id xset r rate 300 50
 
 

@@ -9,7 +9,7 @@ OPTIONS=(
 )
 
 CHOSEN=$(printf "%s\n" "${OPTIONS[@]}" \
-         | rofi -dmenu -i -theme powermenu.rasi -p "")
+         | rofi -dmenu -i -theme simplemenu.rasi -p "")
 
 case "$CHOSEN" in
   "")  systemctl poweroff   ;;

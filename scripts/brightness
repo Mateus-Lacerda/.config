@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+OPTIONS=(
+  "󰃞"
+  "󰃟"
+  "󰃠"
+  ""
+  ""
+)
+
+CHOSEN=$(printf "%s\n" "${OPTIONS[@]}" \
+         | rofi -dmenu -i -theme simplemenu.rasi -p "")
+
+case "$CHOSEN" in
+    "")  brightnessctl set -10% ;;
+    "󰃞")  brightnessctl set 25% ;;
+    "󰃟")  brightnessctl set 50% ;;
+    "󰃠")  brightnessctl set 100% ;;
+    "")  brightnessctl set +10% ;;
+esac

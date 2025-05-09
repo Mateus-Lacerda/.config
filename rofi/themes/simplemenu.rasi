@@ -1,13 +1,8 @@
 configuration{
     // modi: ["drun", "window", "run"];
-    icon-theme: "Papirus-Dark";
-    show-icons: true;
     terminal: "kitty";
     location: 0;
     sidebar-mode: false;
-    display-drun: " ";
-    display-run: " ";
-    display-window: " ";
 
     //adding vim keybindings
     kb-row-up: "Up,k";
@@ -27,6 +22,21 @@ configuration{
 
 @theme "/usr/share/rofi/themes/tokyonight.rasi"
 
+* {
+    bg: #24283b;
+    hv: #9274ca; 
+    primary: #C5C8C6; 
+    ug: #0B2447;
+    font: "Monospace 20";
+    background-color: @bg;
+    //dark: @bg;
+    border: 0px;
+    kl: #7aa2f7;
+    black: #000000;
+
+    transparent: rgba(46,52,64,0);
+}
+
 window {
     width: 700;
     /*since line wont work with height, i comment it out 
@@ -45,6 +55,11 @@ window {
     children: [ mainbox ];
 }
 
+mainbox {
+    spacing: 0;
+    children: [ message, listview ];
+}
+
 listview {
     layout: vertical;
     //spacing: 5px;
@@ -57,10 +72,6 @@ listview {
     dynamic: true;
 }
 
-inputbar {
-    enabled: false;
-}
-
 element {
     padding: 12px;
     vertical-align: 1;
@@ -68,6 +79,7 @@ element {
     color: @kl;
     font: inherit;
 }
+
 element-text, element-icon {
     background-color: inherit;
     text-color: inherit;
