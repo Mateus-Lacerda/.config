@@ -1,6 +1,4 @@
 configuration{
-    // modi: ["drun", "window", "run"];
-    terminal: "kitty";
     location: 0;
     sidebar-mode: false;
 

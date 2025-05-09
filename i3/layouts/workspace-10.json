@@ -1,11 +1,11 @@
 // vim:ts=4:sw=4:et
 {
-    "border": "pixel",
+    "border": "none",
     "current_border_width": 1,
     "floating": "auto_off",
     "geometry": {
-       "height": 1035,
-       "width": 1898,
+       "height": 600,
+       "width": 1000,
        "x": 0,
        "y": 0
     },
@@ -14,8 +14,8 @@
     "percent": 0.5,
     "swallows": [
        {
-        "class": "^kitty$",
-        "instance": "^kitty$",
+        "class": "^com\\.mitchellh\\.ghostty$",
+        "instance": "^ghostty$",
         "machine": "^archlinux$",
         "title": "^btop$"
        }
@@ -33,35 +33,46 @@
     "type": "con",
     "nodes": [
         {
+            // splith split container with 1 children
             "border": "pixel",
-            "current_border_width": 1,
             "floating": "auto_off",
-            "geometry": {
-               "height": 1035,
-               "width": 1898,
-               "x": 0,
-               "y": 0
-            },
+            "layout": "splith",
             "marks": [],
-            "name": "neofetch",
             "percent": 0.5,
-            "swallows": [
-               {
-                "class": "^kitty$",
-                "instance": "^kitty$",
-                "machine": "^archlinux$",
-                "title": "^neofetch$"
-               }
-            ],
-            "type": "con"
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "none",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 600,
+                       "width": 1000,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "marks": [],
+                    "name": "neofetch",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                        "class": "^com\\.mitchellh\\.ghostty$",
+                        "instance": "^ghostty$",
+                        "machine": "^archlinux$",
+                        "title": "^neofetch$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
         },
         {
-            "border": "pixel",
+            "border": "none",
             "current_border_width": 1,
             "floating": "auto_off",
             "geometry": {
-               "height": 1035,
-               "width": 1898,
+               "height": 600,
+               "width": 1000,
                "x": 0,
                "y": 0
             },
@@ -70,8 +81,8 @@
             "percent": 0.5,
             "swallows": [
                {
-                "class": "^kitty$",
-                "instance": "^kitty$",
+                "class": "^com\\.mitchellh\\.ghostty$",
+                "instance": "^ghostty$",
                 "machine": "^archlinux$",
                 "title": "^cmatrix$"
                }
