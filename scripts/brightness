@@ -1,20 +1,35 @@
 #!/usr/bin/env bash
 
+STATE_FILE="$HOME/.brightness_menu_last"
+
+if [ -f "$STATE_FILE" ]; then
+    LAST_CHOSEN=$(cat "$STATE_FILE")
+else
+    LAST_CHOSEN=""
+fi
+
 OPTIONS=(
-  "󰃞"
-  "󰃟"
-  "󰃠"
-  ""
-  ""
+    "󰃞"
+    "󰃟"
+    "󰃠"
+    ""
+    ""
 )
 
-CHOSEN=$(printf "%s\n" "${OPTIONS[@]}" \
-         | rofi -dmenu -i -theme simplemenu.rasi -p "")
+while true; do
+    CHOSEN=$(printf "%s\n" "${OPTIONS[@]}" \
+             | rofi -dmenu -i -theme simplemenu.rasi -p "" -selected-row "$(printf "%s\n" "${OPTIONS[@]}" | grep -n "^$LAST_CHOSEN$" | cut -d: -f1 | awk '{print $1-1}')")
 
-case "$CHOSEN" in
-    "")  brightnessctl set -10% ;;
-    "󰃞")  brightnessctl set 25% ;;
-    "󰃟")  brightnessctl set 50% ;;
-    "󰃠")  brightnessctl set 100% ;;
-    "")  brightnessctl set +10% ;;
-esac
+    [ -n "$CHOSEN" ] && echo "$CHOSEN" > "$STATE_FILE"
+
+    LAST_CHOSEN="$CHOSEN"
+
+    case "$CHOSEN" in
+        "") brightnessctl set 10%- ;;
+        "") brightnessctl set +10% ;;
+        "󰃞") brightnessctl set 25%; break ;;
+        "󰃟") brightnessctl set 50%; break ;;
+        "󰃠") brightnessctl set 100%; break ;;
+        *) break ;;
+    esac
+done
