@@ -215,12 +215,12 @@ default_floating_border pixel 1
 
 # Custom mode to start the browser with different profiles
 mode "browser" {
-        bindsym p exec zen -P Pessoal; mode "default"
-        bindsym b exec zen -P Balanças\ SMART; mode "default"
-        bindsym g exec zen -P GPT; mode "default"
-        bindsym u exec zen -P Mateus\ -\ UFG; mode "default"
-        bindsym w exec zen -P Work\ -\ Pacto; mode "default"
-        bindsym Shift+w exec zen -P Mateus\ -\ Trabalho; mode "default"
+        bindsym p exec zen-browser -P Pessoal; mode "default"
+        bindsym b exec zen-browser -P Balanças\ SMART; mode "default"
+        bindsym g exec zen-browser -P GPT; mode "default"
+        bindsym u exec zen-browser -P Mateus\ -\ UFG; mode "default"
+        bindsym w exec zen-browser -P Work\ -\ Pacto; mode "default"
+        bindsym Shift+w exec zen-browser -P Mateus\ -\ Trabalho; mode "default"
         bindsym $mod+b mode "default"
         bindsym Return mode "default"
         bindsym Escape mode "default"
