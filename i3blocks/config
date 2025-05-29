@@ -5,7 +5,7 @@ markup=pango
 
 [bitcoin]
 command=~/.config/i3blocks/scripts/bitcoin.sh
-interval=10
+interval=30
 markup=pango
 
 [disk]

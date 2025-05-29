@@ -1,0 +1,123 @@
+/* Estilo geral */
+* {
+    font-family: "Fira Code", monospace;
+    font-size: 14px;
+    color: #c0caf5; /* Texto primário */
+    border: none;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+/* Fundo da barra com gradiente Tokyo Night */
+#waybar {
+    background: linear-gradient(90deg, #1a1b26 0%, #24283b 100%);
+    padding: 0 10px;
+}
+
+/* Workspaces */
+#workspaces {
+    padding: 0 5px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #a9b1d6; /* Texto secundário */
+    background: transparent;
+    border-radius: 10px;
+    margin: 4px 2px;
+}
+
+#workspaces button:hover {
+    background: #414868; /* Fundo hover */
+    color: #c0caf5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#workspaces button.active {
+    background: #7aa2f7; /* Azul para workspace ativo */
+    color: #1a1b26;
+    border-radius: 10px;
+}
+
+/* Módulos à direita */
+#battery, #network, #clock, #custom-bitcoin, #pulseaudio, #power-profiles-daemon, #custom-power, #idle_inhibitor, #tray, #custom-notification, #custom-media, #mpd {
+    padding: 0 10px;
+    margin: 4px 5px;
+    background: #24283b; /* Fundo secundário */
+    border-radius: 10px;
+}
+
+/* Bitcoin */
+#custom-bitcoin {
+    color: #e0af68; /* Amarelo para Bitcoin */
+}
+
+/* Bateria */
+#battery {
+    color: #9ece6a; /* Verde para bateria */
+}
+
+#battery.charging {
+    color: #e0af68; /* Amarelo para carregando */
+}
+
+#battery.critical:not(.charging) {
+    color: #f7768e; /* Vermelho para crítica */
+    animation: blink 1s ease-in-out infinite alternate;
+}
+
+/* Animação de piscar */
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+
+/* Rede */
+#network {
+    color: #7dcfff; /* Ciano para rede */
+}
+
+#network.disconnected {
+    color: #f7768e; /* Vermelho para desconectado */
+}
+
+/* Relógio */
+#clock {
+    color: #bb9af7; /* Roxo para relógio */
+    font-weight: bold;
+}
+
+/* Outros módulos */
+#pulseaudio {
+    color: #7dcfff; /* Ciano */
+}
+
+#power-profiles-daemon {
+    color: #9ece6a; /* Verde */
+}
+
+#custom-power {
+    color: #f7768e; /* Vermelho */
+}
+
+#idle_inhibitor {
+    color: #a9b1d6; /* Secundária */
+}
+
+#custom-notification {
+    color: #bb9af7; /* Roxo */
+}
+
+#custom-media {
+    color: #7aa2f7; /* Azul */
+}
+
+#mpd {
+    color: #c0caf5; /* Primária */
+}
+
+/* Efeito de hover nos módulos */
+#battery:hover, #network:hover, #clock:hover, #custom-bitcoin:hover, #pulseaudio:hover, #power-profiles-daemon:hover, #custom-power:hover, #idle_inhibitor:hover, #tray:hover, #custom-notification:hover, #custom-media:hover, #mpd:hover {
+    background: #414868;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

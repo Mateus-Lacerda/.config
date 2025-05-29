@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# TODO: Verificar rate limit para otimizar
 # 1) Extrai os dados crus
 data_price=$(curl -s 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true')
 raw_price=$(echo "$data_price"   | jq -r '.bitcoin.usd')

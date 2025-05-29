@@ -26,4 +26,13 @@ tmux/plugins
 !scripts/
 !scripts/**
 
+!hypr/
+!hypr/**
+
+!waybar/
+!waybar/**
+
+!kanshi/
+!kanshi/**
+
 !install.sh
