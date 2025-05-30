@@ -8,6 +8,13 @@
     transition: all 0.3s ease;
 }
 
+#custom-mediaplayer
+{
+  font-size: 12px;
+  border-radius: 2%;
+}
+@import "./waybar-mediaplayer/src/style.css";
+
 /* Fundo da barra com gradiente Tokyo Night */
 #waybar {
     background: linear-gradient(90deg, #1a1b26 0%, #24283b 100%);
@@ -40,7 +47,7 @@
 }
 
 /* Módulos à direita */
-#battery, #network, #clock, #custom-bitcoin, #pulseaudio, #power-profiles-daemon, #custom-power, #idle_inhibitor, #tray, #custom-notification, #custom-media, #mpd {
+#battery, #network, #clock, #custom-bitcoin, #pulseaudio, #power-profiles-daemon, #custom-power, #idle_inhibitor, #tray, #custom-notification, #custom-mediaplayer, #mpd {
     padding: 0 10px;
     margin: 4px 5px;
     background: #24283b; /* Fundo secundário */
@@ -108,7 +115,7 @@
     color: #bb9af7; /* Roxo */
 }
 
-#custom-media {
+#custom-mediaplayer {
     color: #7aa2f7; /* Azul */
 }
 
@@ -117,7 +124,7 @@
 }
 
 /* Efeito de hover nos módulos */
-#battery:hover, #network:hover, #clock:hover, #custom-bitcoin:hover, #pulseaudio:hover, #power-profiles-daemon:hover, #custom-power:hover, #idle_inhibitor:hover, #tray:hover, #custom-notification:hover, #custom-media:hover, #mpd:hover {
+#battery:hover, #network:hover, #clock:hover, #custom-bitcoin:hover, #pulseaudio:hover, #power-profiles-daemon:hover, #custom-power:hover, #idle_inhibitor:hover, #tray:hover, #custom-notification:hover, #custom-mediaplayer:hover, #mpd:hover {
     background: #414868;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }

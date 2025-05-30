@@ -3,6 +3,11 @@ profile {
     output eDP-1 enable mode 1920x1080@165Hz position 1920,0 scale 1.5
 }
 
+profile prpi {
+    output HDMI-A-1 enable mode 1920x1080@60Hz position 1280,0 scale 1.0
+    output eDP-1 enable mode 1920x1080@60Hz position 0,0 scale 1.5
+}
+
 profile laptop-only {
-    output eDP-1 enable mode 1920x1080@165Hz position 0,0 scale 1.5
+    output eDP-1 enable mode 1920x1080@165Hz position 0,0 scale 1.0
 }

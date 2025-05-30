@@ -5,7 +5,8 @@
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": [
         "hyprland/workspaces",
-        "custom/media"
+        "image",
+        "custom/mediaplayer"
     ],
     "modules-center": [
         "custom/notification",
@@ -24,6 +25,23 @@
         "tray",
         "custom/power"
     ],
+     "image": {
+       "path": "/tmp/waybar-mediaplayer-art",
+       "size": 32,
+       "signal": 4,
+       "on-click": "feh --auto-zoom --borderless --title 'feh-float' /tmp/waybar-mediaplayer-art"
+     },
+
+     "custom/mediaplayer": {
+         "exec": "$HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer monitor",
+         "return-type": "json",
+         "format": "{}",
+         "on-click": "$HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer play-pause",
+         "on-scroll-up": "$HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer next",
+         "on-scroll-down": "$HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer previous",
+         "min-length": 20,
+         "max-length": 20
+     },
     // Modules configuration
     "hyprland/workspaces": {
         "format": "{name}: {icon}",
@@ -120,7 +138,7 @@
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}%  ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
