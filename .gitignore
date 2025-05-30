@@ -1,20 +1,9 @@
 *
 
 !.gitignore
-!i3/
-!i3/**
-
-!dunst/
-!dunst/**
-
-!i3blocks/
-!i3blocks/**
 
 !ghostty/
 !ghostty/**
-
-!picom/
-!picom/**
 
 !rofi/
 !rofi/**
