@@ -124,7 +124,11 @@
 }
 
 /* Efeito de hover nos módulos */
-#battery:hover, #network:hover, #clock:hover, #custom-bitcoin:hover, #pulseaudio:hover, #power-profiles-daemon:hover, #custom-power:hover, #idle_inhibitor:hover, #tray:hover, #custom-notification:hover, #custom-mediaplayer:hover, #mpd:hover {
+#battery:hover, #network:hover, #clock:hover, #custom-bitcoin:hover, #pulseaudio:hover, #power-profiles-daemon:hover, #custom-power:hover, #idle_inhibitor:hover, #custom-notification:hover, #custom-mediaplayer:hover, #mpd:hover {
     background: #414868;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#image.distro {
+    padding-left: 10px;
 }
