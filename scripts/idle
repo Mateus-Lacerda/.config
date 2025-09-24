@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+OPTIONS=(
+  ""
+  ""
+)
+
+CHOSEN=$(printf "%s\n" "${OPTIONS[@]}" \
+         | rofi -dmenu -i -theme simplemenu.rasi -p "")
+
+case "$CHOSEN" in
+  "")  systemd-inhibit --what=idle --who="Manual Inhibit" --why="Watching video" --mode=block sleep infinity & echo $! > ~/.hypridle_inhibit.pid ;;
+  "")  kill $(cat ~/.hypridle_inhibit.pid) && rm ~/.hypridle_inhibit.pid ;;
+esac

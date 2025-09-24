@@ -5,7 +5,7 @@ OPTIONS=(
   ""
   ""
   ""
-  ""      # ícone alternativo para “sair do i3”
+  ""
 )
 
 CHOSEN=$(printf "%s\n" "${OPTIONS[@]}" \
@@ -16,5 +16,5 @@ case "$CHOSEN" in
   "")  systemctl reboot     ;;
   "")  $HOME/.config/scripts/lock & systemctl suspend    ;;
   "")  $HOME/.config/scripts/lock    ;;
-  "")  i3-msg exit          ;;
+  "")  hyprctl dispatch exit         ;;
 esac

@@ -26,7 +26,8 @@ configuration{
     kb-move-char-forward: "Control+f";
     kb-mode-complete: "Control+o";
 }
-@theme "/usr/share/rofi/themes/tokyonight.rasi"
+
+@theme "~/.config/rofi/themes/base-theme.rasi"
 
 window {
     width: 800;
@@ -49,7 +50,7 @@ mainbox {
 
 imagebox {
     background-color: @transparent; /* Transparente para mostrar o papel de parede */
-    background-image: url("~/.config/wallpapers/vaporwave_cropped.jpg", height);
+    background-image: @bg-image;
     padding: 10px;
     width: 150px; /* Largura da área transparente à esquerda */
 }
