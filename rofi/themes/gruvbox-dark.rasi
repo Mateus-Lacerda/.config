@@ -71,7 +71,7 @@
 
     transparent: rgba(0,0,0,0);
 
-    bg-image: url("~/.config/wallpapers/linux_user_room.png", height);
+    bg-image: url("~/.config/wallpapers/gruvbox_tux_cropped.jpg", height);
 
 }
 
