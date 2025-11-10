@@ -5,6 +5,12 @@
 !ghostty/
 !ghostty/**
 
+!kitty/
+!kitty/**
+
+!zellij/
+!zellij/**
+
 !rofi/
 !rofi/**
 

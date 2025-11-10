@@ -84,7 +84,7 @@ fi
 
 # Instala pacotes base
 install_pacman base-devel git man mupdf neofetch wget curl \
-    pavucontrol bluez blueman arandr ghostty btop cmatrix
+    pavucontrol bluez blueman arandr kitty btop cmatrix
 
 install_yay zen-browser-bin
 
