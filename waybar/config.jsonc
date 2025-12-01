@@ -62,7 +62,10 @@
             "urgent": "",
             "active": "",
             "default": "",
+            "magic": "",
             "spotify": "󰓇",
+            "discord": "󰙯",
+            "whatsapp": ""
         },
         "show-special": true
     },
