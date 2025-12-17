@@ -17,7 +17,9 @@
 
 /* Fundo da barra com gradiente Tokyo Night */
 #waybar {
-    background: linear-gradient(90deg, #1a1b26 0%, #24283b 100%);
+    /* background: linear-gradient(90deg, #1a1b26 0%, #24283b 100%); */
+    /* transparent */
+    background: transparent;
     padding: 0 10px;
 }
 
@@ -27,31 +29,38 @@
 }
 
 #workspaces button {
-    padding: 0 8px;
-    color: #a9b1d6; /* Texto secundário */
+    padding: 0 4px;
+    color: #a9b1d6;
     background: transparent;
-    border-radius: 10px;
-    margin: 4px 2px;
+    border-radius: 20px;
+    margin: 4px 4px;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); /* Animação suave essencial */
 }
 
 #workspaces button:hover {
-    background: #414868; /* Fundo hover */
-    color: #c0caf5;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    color: #c0caf5; /* Texto fica mais claro */
+    background: rgba(65, 72, 104, 0.3);
+    box-shadow: 0 0 3px 1px rgba(122, 162, 247, 0.4);
 }
 
 #workspaces button.active {
-    background: #7aa2f7; /* Azul para workspace ativo */
+    color: #ffffff;
+    background: rgba(122, 162, 247, 0.5);
+    box-shadow: 0 0 2px 0 rgba(122, 162, 247, 0.6);
+}
+
+#workspaces button.urgent {
     color: #1a1b26;
-    border-radius: 10px;
+    background: #f7768e; /* Vermelho Tokyo Night */
+    box-shadow: 0 0 3px 1px rgba(247, 118, 142, 0.6);
 }
 
 /* Módulos à direita */
 #battery, #network, #clock, #custom-bitcoin, #pulseaudio, #power-profiles-daemon, #custom-power, #idle_inhibitor, #tray, #custom-notification, #custom-mediaplayer, #mpd {
     padding: 0 10px;
     margin: 4px 5px;
-    background: #24283b; /* Fundo secundário */
-    border-radius: 10px;
+    background: rgba(23, 2, 1, 0.1);
+    border-radius: 5px;
 }
 
 /* Bitcoin */
@@ -116,7 +125,15 @@
 }
 
 #custom-mediaplayer {
-    color: #7aa2f7; /* Azul */
+    color: #7aa2f7; /* Azul Tokyo Night */
+    background: rgba(26, 27, 38, 0.4); /* Fundo base escuro e discreto */
+    font-size: 11px; /* Aumentei levemente para legibilidade */
+    
+    border-radius: 10px; /* Igual aos workspaces para consistência */
+    padding: 0 12px;     /* Espaço nas laterais para o texto respirar */
+    margin: 4px 2px;
+    
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 #mpd {
@@ -125,8 +142,9 @@
 
 /* Efeito de hover nos módulos */
 #battery:hover, #network:hover, #clock:hover, #custom-bitcoin:hover, #pulseaudio:hover, #power-profiles-daemon:hover, #custom-power:hover, #idle_inhibitor:hover, #custom-notification:hover, #custom-mediaplayer:hover, #mpd:hover {
-    background: #414868;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    color: #c0caf5; /* Texto fica mais claro */
+    background: rgba(65, 72, 104, 0.3);
+    box-shadow: 0 0 3px 1px rgba(122, 162, 247, 0.4);
 }
 
 #image.distro {

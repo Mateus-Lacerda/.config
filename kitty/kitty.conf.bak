@@ -20,7 +20,7 @@ cursor_trail 40
 scrollback_lines 10000
 
 scrollback_pager nvim --cmd 'set eventignore=FileType' +'nnoremap q ZQ' +'call nvim_open_term(0, {})' +'set nomodified nolist' +'$' -
-# url_color #0087bd
+
 url_style straight
 
 copy_on_select yes
@@ -48,6 +48,6 @@ hide_window_decorations yes
 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Dark
+# Gruvbox Dark Hard
 include current-theme.conf
 # END_KITTY_THEME
