@@ -5,8 +5,7 @@ OPTIONS=(
   ""
 )
 
-CHOSEN=$(printf "%s\n" "${OPTIONS[@]}" \
-         | rofi -dmenu -i -theme simplemenu.rasi -p "")
+CHOSEN=$(printf "%s\n" "${OPTIONS[@]}" | hyprlauncher --dmenu)
 
 case "$CHOSEN" in
   "")  systemd-inhibit --what=idle --who="Manual Inhibit" --why="Watching video" --mode=block sleep infinity & echo $! > ~/.hypridle_inhibit.pid ;;

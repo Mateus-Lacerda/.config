@@ -40,7 +40,7 @@ check_internet() {
 # Função para instalar pacotes com pacman
 install_pacman() {
     msg "Instalando pacotes: $@"
-    sudo pacman -S --needed "$@"
+    sudo pacman -S --needed "$@" --noconfirm
     check_error "Falha ao instalar pacotes com pacman"
 }
 
@@ -83,17 +83,17 @@ if ! command -v yay &> /dev/null; then
 fi
 
 # Instala pacotes base
-install_pacman base-devel git man mupdf neofetch wget curl \
-    pavucontrol bluez blueman arandr kitty btop cmatrix
+install_pacman base-devel git man mupdf wget curl \
+    pavucontrol bluez blueman arandr kitty btop cmatrix uv
 
-install_yay zen-browser-bin
+install_yay zen-browser-bin neofetch
 
 # Instala fontes
-install_pacman ttf-fira-code
+install_pacman ttf-fira-code ttf-firacode-nerd
 install_yay nerd-fonts-sf-mono
 
-# Instala pacotes do i3
-install_pacman i3blocks picom rofi dunst
+# Instala pacotes do i3/Hyprland
+install_pacman i3blocks picom rofi dunst hyprlauncher
 install_yay i3lock-color
 
 # Instala neovim e dependências
@@ -117,8 +117,7 @@ fi
 # Instala plugins do oh-my-zsh
 msg "Instalando plugins do oh-my-zsh..."
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-sudo mv zsh-syntax-highlighting /usr/share/
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 
 # Instala tmux
@@ -164,6 +163,12 @@ sudo mv ~/.config/rofi/tokyonight.rasi /usr/share/rofi/themes
 sudo mv ~/.config/rofi/tokyonight_big1.rasi /usr/share/rofi/themes
 sudo mv ~/.config/rofi/tokyonight_big2.rasi /usr/share/rofi/themes
 [ -f ~/.config/rofi/README.md ] && rm ~/.config/rofi/README.md
+
+# Instala sound-viz para visualização de som no Waybar
+msg "Instalando sound-viz..."
+git clone https://github.com/Mateus-Lacerda/sound-viz.git /tmp/sound-viz-src
+uv tool install /tmp/sound-viz-src --force
+rm -rf /tmp/sound-viz-src
 
 # Finalização
 msg "Instalação concluída! Log salvo em $LOG_FILE"

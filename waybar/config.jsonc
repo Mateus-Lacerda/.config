@@ -1,18 +1,19 @@
 // -*- mode: jsonc -*-
 {
     "layer": "top", // Waybar at top layer
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 32, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": [
         "image#distro",
         "hyprland/workspaces",
         "image",
-        "custom/mediaplayer",
-        "hyprland/submap"
+        "hyprland/submap",
+        "custom/sound_viz_player",
+        "custom/sound_viz"
     ],
     "modules-center": [
         "custom/notification",
-        "hyprland/window",
+        "hyprland/window"
     ],
     "modules-right": [
         "idle_inhibitor",
@@ -31,27 +32,11 @@
        "signal": 4,
        "size": 20,
      },
-     "image": {
-       "path": "/tmp/waybar-mediaplayer-art",
-       "size": 32,
-       "signal": 4,
-       "on-click": "feh --auto-zoom --borderless --title 'feh-float' /tmp/waybar-mediaplayer-art"
-     },
     "hyprland/submap": {
         "format": "  {} ",
         "max-length": 12,
         "tooltip": false
     },
-     "custom/mediaplayer": {
-         "exec": "$HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer monitor",
-         "return-type": "json",
-         "format": "{}",
-         "on-click": "$HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer play-pause",
-         "on-scroll-up": "$HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer next",
-         "on-scroll-down": "$HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer previous",
-         "min-length": 20,
-         "max-length": 20
-     },
     // Modules configuration
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -135,7 +120,7 @@
         "format-icons": ["", "", "", "", ""]
     },
     "battery#bat2": {
-        "bat": "BAT2"
+        "bat": "BAT"
     },
     "power-profiles-daemon": {
       "format": "{icon}",
@@ -176,18 +161,6 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": ""
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
     "custom/power": {
         "format" : "⏻ ",
 		"tooltip": false,
@@ -205,5 +178,20 @@
         "exec": "~/.config/hypr/scripts/bitcoin.sh",
         "interval": 60,
         "tooltip": false
+    },
+    "custom/sound_viz": {
+        "exec": "/home/mateus-lacerda/.local/bin/sound_viz --output waybar",
+        "tail": true,
+        "format": "{}",
+        "on-click": "/home/mateus-lacerda/.local/bin/sound_viz --playerctl-command play-pause",
+        "on-scroll-up": "/home/mateus-lacerda/.local/bin/sound_viz --playerctl-command previous",
+        "on-scroll-down": "/home/mateus-lacerda/.local/bin/sound_viz --playerctl-command next",
+        "on-click-middle": "/home/mateus-lacerda/.local/bin/sound_viz --scan-device"
+    },
+    "custom/sound_viz_player": {
+        "exec": "/home/mateus-lacerda/.local/bin/sound_viz --output waybar --icon-player",
+        "tail": true,
+        "format": "{}",
+        "on-click": "/home/mateus-lacerda/.local/bin/sound_viz --switch-player"
     }
 }

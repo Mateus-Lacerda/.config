@@ -8,8 +8,7 @@ OPTIONS=(
   ""
 )
 
-CHOSEN=$(printf "%s\n" "${OPTIONS[@]}" \
-         | rofi -dmenu -i -theme simplemenu.rasi -p "")
+CHOSEN=$(printf "%s\n" "${OPTIONS[@]}" | hyprlauncher --dmenu)
 
 case "$CHOSEN" in
   "")  systemctl poweroff   ;;

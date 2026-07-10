@@ -17,8 +17,7 @@ OPTIONS=(
 )
 
 while true; do
-    CHOSEN=$(printf "%s\n" "${OPTIONS[@]}" \
-             | rofi -dmenu -i -theme simplemenu.rasi -p "" -selected-row "$(printf "%s\n" "${OPTIONS[@]}" | grep -n "^$LAST_CHOSEN$" | cut -d: -f1 | awk '{print $1-1}')")
+    CHOSEN=$(printf "%s\n" "${OPTIONS[@]}" | hyprlauncher --dmenu)
 
     [ -n "$CHOSEN" ] && echo "$CHOSEN" > "$STATE_FILE"
 
