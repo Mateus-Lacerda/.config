@@ -138,16 +138,13 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Aplica dotfiles
 msg "Aplicando dotfiles..."
-git clone https://github.com/Mateus-Lacerda/.config.git
 backup_dir ~/.config
-cp -rf .config/* ~/.config/
-[ -d .config ] && rm -rf .config
+git clone https://github.com/Mateus-Lacerda/.config.git ~/.config
 
 # Configura neovim
 msg "Aplicando configuração do neovim..."
-git clone https://github.com/Mateus-Lacerda/neovim_config.git
 backup_dir ~/.config/nvim
-mv neovim_config ~/.config/nvim
+git clone https://github.com/Mateus-Lacerda/neovim_config.git ~/.config/nvim
 
 # Configura zsh
 msg "Aplicando configuração do zsh..."
