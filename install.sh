@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Script de pós-instalação para Arch Linux
-# Configura i3, neovim, zsh, temas e dotfiles personalizados
+# Script de pós-instalação para Arch Linux (Hyprland Branch)
+# Configura Hyprland, neovim, zsh, temas e dotfiles personalizados
 # Execute como usuário normal, com sudo apenas quando necessário
 
 # Arquivo de log
@@ -92,9 +92,10 @@ install_yay zen-browser-bin neofetch
 install_pacman ttf-fira-code ttf-firacode-nerd
 install_yay nerd-fonts-sf-mono
 
-# Instala pacotes do i3/Hyprland
-install_pacman i3blocks picom rofi dunst hyprlauncher
-install_yay i3lock-color
+# Instala pacotes do Hyprland e Wayland
+install_pacman hyprland hyprlock hypridle hyprpaper waybar kanshi swaync \
+    hyprlauncher cliphist wl-clipboard wl-clip-persist brightnessctl playerctl \
+    libnotify grim slurp
 
 # Instala neovim e dependências
 install_pacman neovim luarocks fd ripgrep xclip
@@ -154,15 +155,6 @@ git clone https://github.com/Mateus-Lacerda/zshrc.git
 backup_dir ~/.zshrc
 mv zshrc/* ~
 [ -d zshrc ] && rm -rf zshrc
-
-# Configura tema do rofi
-msg "Aplicando tema Tokyo Night para o rofi..."
-backup_dir ~/.config/rofi
-git clone https://github.com/w8ste/Tokyonight-rofi-theme.git ~/.config/rofi
-sudo mv ~/.config/rofi/tokyonight.rasi /usr/share/rofi/themes
-sudo mv ~/.config/rofi/tokyonight_big1.rasi /usr/share/rofi/themes
-sudo mv ~/.config/rofi/tokyonight_big2.rasi /usr/share/rofi/themes
-[ -f ~/.config/rofi/README.md ] && rm ~/.config/rofi/README.md
 
 # Instala sound-viz para visualização de som no Waybar
 msg "Instalando sound-viz..."
